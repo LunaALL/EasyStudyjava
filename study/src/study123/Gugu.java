@@ -18,7 +18,9 @@ public class Gugu {
 		}
 		*/
 		
-		
+
+		int C=0;
+
 		
 	int A=0;
 	int B=0;
