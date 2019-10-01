@@ -1,23 +1,28 @@
 package mehodstud;
 
 public class fruitBuyer {
-	int money=0;
-	int needapplenum=10;
-	int have_apple=0;
+	int mymoney=0;
+	int num_ofapple=0;
+	int myapple=0;
 	
-    public int byapple (fruitseller sell, int money) {
-        if(sell.numofapple>needapplenum) {
-        	money-= sell.applefrice*needapplenum;
-            have_apple=needapplenum;
-            sell.numofapple-=have_apple;
-        }
-        return money;
-        
-      }
-    
-    public void getResult(int money) {
-    	System.out.println("남은 돈 = "+money);
-    	System.out.println("가진 사과= "+have_apple);
+	
+	public fruitBuyer(int money, int needapple) {
+		mymoney=money;  //사는사람 지갑
+		num_ofapple= needapple; //필요한 사과수
+		
+	}
+
+	
+    public void buyapple(fruitseller seller) {
+    	int buyerfrice=seller.saleapple(num_ofapple);
+    	System.out.println("사과 가격은 ="+buyerfrice +"원 입니다.");
+    	mymoney-=buyerfrice;
+    	myapple=num_ofapple;
+    	
+    } 
+    public void getResult() {
+    	System.out.println("구매자에 남은 돈은 "+mymoney);
+    	System.out.println("구매자가 가진 사과= "+myapple);
     }
 	
 
